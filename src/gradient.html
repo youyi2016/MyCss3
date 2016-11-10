@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css/css3 demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+			/*线性渐变*/	
+			p {
+				width: 400px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+				color: #000;
+				font-size: 24px;
+				background-image: linear-gradient(to top left, #fff, #999);
+			}
+			
+			p2 {
+				width: 400px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+				color: #000;
+				font-size: 24px;
+				background-image: linear-gradient(to right, #f00, #0f0, #00f, #999);
+			}
+			
+			p3 {
+				width: 400px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+				color: #000;
+				font-size: 24px;
+				background-image: linear-gradient(to top, #f00, #0f0, #00f, #999);
+			}
+		</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="main">
+  @@include('include/leftMenu.html')
+  <div class="content_wrap">
+  <div class="content">
+    <p>右下角向左上角的线性渐变背景</p>
+   <p2>从左到右的线性渐变背景</p2>
+   <p3>从下到上的线性渐变背景</p3>
+  </div>
+  </div>
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

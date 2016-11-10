@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css/css3 demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- 文字与字体 
+text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省略号的效果，
+clip 表示剪切 ellipsis表示省略标记
+-->
+<!--
+@font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。
+@font-face {
+    font-family : 字体名称;
+    src : 字体文件在服务器上的相对或绝对路径;
+} 
+ -->
+ <!--
+ text-shadow: X-Offset Y-Offset blur color;
+ x轴正值向右反之向左 y正值向下 反之向上
+ -->
+	<style type="text/css">
+	.test_demo,
+	.demo {
+	  display: inline-block;
+	}
+	
+    .test_demo{
+    text-overflow:ellipsis; 
+    overflow:hidden; 
+    white-space:nowrap; 
+    width:200px; 
+    background:#ccc;
+    }
+   /*文字阴影*/
+  .demo {
+    width: 340px;
+    padding: 30px;
+    font: bold 55px/100% "微软雅黑";
+    background: #C5DFF8;
+    text-shadow: 2px 2px 0 red;
+    }
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="main">
+  ﻿  ﻿ 
+ <div class="btn-group-vertical menu">
+  <button type="button" class="btn btn-primary" onclick="window.location.href='shadow.html'">css3阴影</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='gradient.html'">css3线性渐变</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='word_font.html'">css文字与字体</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='border.html'">css边框设置</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='selector.html'">css3中的选择器</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='background.html'">背景图片（多重）</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='translate.html'">css3动画之translate</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='transition.html'">css3动画之transition过渡</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='animation.html'">css3动画之animation</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='navcss3.html'">CSS制作立体导航</button>
+  
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      DEMO
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="changeBackgroundImg.html">DEMO1</a></li>
+      <li><a href="#">DEMO2</a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="content_wrap">
+      <div class="content">
+         <div class="demo">文本阴影text-shadow</div>	  
+         <div class="test_demo">
+                 超酷的css3效果文字省略号（我是省略号）
+         </div>
+			<!--<div class="wrap"><span>padding</span>
+			    <div class="content">content</div>
+			</div>-->
+      </div>
+  </div>
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

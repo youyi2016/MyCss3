@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css/css3 demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  <!-- 动画
+  CSS3的过度transition属性是一个复合属性，主要包括以下几个子属性：
+   当“transition-property”属性设置为all时，表示的是所有中点值的属性。
+  transition-property（改变css的宽、高、角度等等）
+  通过鼠标的单击、获得焦点，被点击或对元素任何改变中触发，并平滑地以动画效果改变CSS的属性值。
+
+  过渡所需时间 transition-duration主要用来设置一个属性过渡到另一个属性所需的时间，也就是从旧属性过渡到新属性花费的时间长度，俗称持续时间。
+
+  过渡函数 transition-timing-function
+  包含一些属性，来设置元素样式的显示速度
+  ease linear ease-in ease-out ease-in-out
+
+  过渡延迟时间 transition-delay
+  transition-delay主要用来指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行。
+ -->
+  <style type="text/css">
+  
+			/*动画
+			-transition-property
+			*/
+			div#dh {
+			  width: 200px;
+			  height: 200px;
+			  background: red;
+			  margin: 20px auto;
+			  -webkit-transition-property: width;
+			  transform-origin: width;
+			  -webkit-transition-duration:.5s;
+			  transition-duration:.5s;
+			  -webkit-transition-timing-function: ease-in;
+			  transition-timing-function: ease-in;
+			  -webkit-transition-delay: .18s;
+			    transition-delay:.18s;
+			}
+			div#dh:hover {
+			  width: 400px;
+			}
+			
+			/*样式变换的速度*/
+			div#sd{
+			  width: 200px;
+			  height: 200px;
+			  background-color: orange;
+			  margin: 20px auto;
+			  border-radius: 100%;
+			  -webkit-transition-property: -webkit-border-radius;
+			  transition-property: border-radius;
+			  -webkit-transition-duration: 1s;
+			  transition-duration: 1s;
+			  -webkit-timing-function:linear;
+			  timing-function:linear;
+			  -webkit-transition-delay: .2s;
+			  transition-delay: .2s;
+			}
+			div#sd:hover {
+			  border-radius: 0px;
+			}
+			
+			/*延时 和transition：all*/
+			 .wrapper2 {
+			  width: 400px;
+			  height: 200px;
+			  margin: 20px auto;
+			  border: 2px dotted red;
+			  position:relative;
+			}
+			
+			.wrapper2 div {
+			  padding: 15px 20px;
+			  color: #fff;
+			  background-color: orange;
+			  position: absolute;
+			  top: 50%;
+			  left:50%;
+			  -webkit-transform: translate(-50%,-50%);
+			  transform: translate(-50%,-50%);
+			  -webkit-transition: all .5s ease-in .2s;
+			  transition:  all .5s ease-in .2s;
+			}
+			
+			.wrapper2 div:hover {
+			  background-color: red;
+			  border-radius: 10px;
+			}
+     </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="main">
+ ﻿ 
+ <div class="btn-group-vertical menu">
+  <button type="button" class="btn btn-primary" onclick="window.location.href='shadow.html'">css3阴影</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='gradient.html'">css3线性渐变</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='word_font.html'">css文字与字体</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='border.html'">css边框设置</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='selector.html'">css3中的选择器</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='background.html'">背景图片（多重）</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='translate.html'">css3动画之translate</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='transition.html'">css3动画之transition过渡</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='animation.html'">css3动画之animation</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='navcss3.html'">CSS制作立体导航</button>
+  
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      DEMO
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="changeBackgroundImg.html">DEMO1</a></li>
+      <li><a href="#">DEMO2</a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="content_wrap">
+      <div class="content">
+      	  <h2>动画之 transition-property</h2>
+			<div id="dh"></div>
+			<h2>动画之过渡函数 transition-timing-function 恒速linear</h2>
+			<div id="sd"> </div>
+			
+			<h2>过渡延迟时间 transition-delay和transition为all的情况</h2>
+			  <div class="wrapper2">
+			  <div>鼠标放到我的身上来</div>
+			</div>
+      </div>
+  </div>
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

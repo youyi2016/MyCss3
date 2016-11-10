@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css/css3 demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+     <!-- 动画效果2
+     1.Keyframes被称为关键帧，其类似于Flash中的关键帧。在CSS3中其主要以“@keyframes”开头，后面紧跟着是动画名称加上一对花括号“{…}”，括号中就是一些不同时间段样式规则。
+
+     2.animation-name属性主要是用来调用 @keyframes 定义好的动画。需要特别注意: animation-name 调用的动画名需要和“@keyframes”定义的动画名称完全一致（区分大小写），如果不一致将不具有任何动画效果。
+      -->
+    <style type="text/css">
+			  @-webkit-keyframes changecolor{
+			  0%{
+			    background: red;
+			  }
+			  20%{
+			    background:blue;
+			  }
+			  40%{
+			    background:orange;
+			  }
+			  60%{
+			    background:green;
+			  }
+			  80%{
+			    background:yellow;
+			  }
+			  100%{
+			    background: red;
+			  }
+			}
+			div#kf{
+			  width: 300px;
+			  height: 200px;
+			  background: red;
+			  color:#fff;
+			  margin: 20px auto;
+			}
+			div#kf:hover {
+			  animation: changecolor 5s ease-out .2s;
+			 /* animation-play-state:paused;*/
+			/*  animation-play-state:running;*/
+			   animation-fill-mode:forwards; 
+			}
+			
+			/*animation-name属性主要是用来调用 @keyframes 定义好的动画。
+			animation- 其他属性如下：
+			1.animation-direction属性主要用来设置动画播放方向
+			animation-direction:normal | alternate [, normal | alternate]*
+			
+			normal是默认值，如果设置为normal时，动画的每次循环都是向前播放；
+			
+			另一个值是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放。
+			
+			2.动画状态
+			animation-play-state:paused;
+			  animation-play-state:running;
+			3.animation-fill-mode
+			属性定义在动画开始之前和结束之后发生的操作。主要具有四个属性值：none、forwards、backwords和both。
+			其他见下面代码
+			*/
+			@keyframes around{
+			  0% {
+			    transform: translateX(0);
+			  }
+			  25%{
+			    transform: translateX(180px);
+			  }
+			  50%{
+			     transform: translate(180px, 180px); 
+			  }
+			  75%{
+			    transform:translate(0,180px);
+			  }
+			  100%{
+			    transform: translateY(0);
+			  }
+			}
+			div#animate {
+			  width: 200px;
+			  height: 200px;
+			  border: 1px solid red;
+			  margin: 20px auto;
+			}
+			div#animate span {
+			  display: inline-block;
+			  width: 20px;
+			  height: 20px;
+			  background: orange;
+			  border-radius: 100%;
+			  animation-name:around;
+			  animation-duration: 10s;//播放时间
+			  animation-timing-function: ease;//播放方式
+			  animation-delay: 1s;//属性用来定义动画开始播放的时间，用来触发动画播放的时间点。
+			
+			  animation-iteration-count:infinite;//播放无数次
+			  //属性主要用来定义动画的播放次数(默认为1次)
+			  //animation-iteration-count: infinite | <number> [, infinite | <number>]*
+			
+			 animation-fill-mode:forwards; 
+			}
+			/**/
+			@keyframes move {
+			  0%{
+			    transform: translate(0);
+			  }
+			  15%{
+			    transform: translate(100px,180px);
+			  }
+			  30%{
+			    transform: translate(150px,0);
+			  }
+			  45%{
+			    transform: translate(250px,180px);
+			  }
+			  60%{
+			    transform:translate(300px,0);
+			  }
+			  75%{
+			    transform: translate(450px,180px);
+			  }
+			  100%{
+			    transfrom: translate(480px,0);
+			  }
+			}
+			
+			div#animate2 {
+			  width: 500px;
+			  height: 200px;
+			  border: 1px solid red;
+			  margin: 20px auto;
+			}
+			div#animate2  span {
+			  display: inline-block;
+			  width: 20px;
+			  height: 20px;
+			  background: green;
+			  border-radius: 100%;
+			  animation-name:move;
+			  animation-duration: 10s;
+			  animation-timing-function:ease;
+			  animation-delay:3s;
+			  animation-iteration-count:infinite;
+			   animation-fill-mode:forwards; 
+			
+			   /* animation-play-state:running;*/
+			
+			}
+			/*animate3*/
+			@keyframes redToBlue{
+			  from{
+			    background: red;
+			  }
+			  20%{
+			      background:green;
+			  }
+			  40%{
+			      background:lime;
+			  }
+			  60%{
+			      background:yellow;
+			  }
+			  to{
+			    background:blue;
+			  }
+			}
+			
+			div#animate3 {
+			  width: 200px;
+			  height: 200px;
+			  background: red;
+			  margin: 20px auto;
+			  animation-name:redToBlue;
+			  animation-duration: 20s;
+			  animation-timing-function: ease;
+			  animation-delay: 1s;
+			 animation-fill-mode: none; 
+			 //both元素动画同时具有forwards和backwards效果
+			 //forwards表示动画在结束后继续应用最后的关键帧的位置
+			 //backwards会在向元素应用动画样式时迅速应用动画的初始帧
+			}
+      </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="main">
+  ﻿ 
+ <div class="btn-group-vertical menu">
+  <button type="button" class="btn btn-primary" onclick="window.location.href='shadow.html'">css3阴影</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='gradient.html'">css3线性渐变</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='word_font.html'">css文字与字体</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='border.html'">css边框设置</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='selector.html'">css3中的选择器</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='background.html'">背景图片（多重）</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='translate.html'">css3动画之translate</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='transition.html'">css3动画之transition过渡</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='animation.html'">css3动画之animation</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='navcss3.html'">CSS制作立体导航</button>
+  
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      DEMO
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="changeBackgroundImg.html">DEMO1</a></li>
+      <li><a href="#">DEMO2</a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="content_wrap">
+      <div class="content">
+      	  <h2>Keyframes 根据鼠标放的比例位置来改变样式</h2>
+			<div id="kf"></div>
+			
+			<h2>animation-name属性主要是用来调用 @keyframes 定义好的动画。</h2>
+			<div id="animate"><span></span></div>
+			
+			<div  id="animate2"><span></span></div>
+			<h2></h2>
+			<div id="animate3"><span></span></div>
+      </div>
+  </div>
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

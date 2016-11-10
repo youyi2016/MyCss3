@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css/css3 demo</title>
+  
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+ <!-- 动画效果
+   变形
+  1. 旋转 rotate()
+    旋转rotate()函数通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为正值，元素相对原点中心顺时针旋转；如果这个值为负值，元素相对原点中心逆时针旋转
+   -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  transform:rotate(-20deg);
+
+ 2. 变形-扭曲 skew()
+
+ 3.缩放 scale()
+   scale(X,Y)使元素水平方向和垂直方向同时缩放
+    当为scale（数值）是代表x y 同时缩放（数值>1 放大 <1缩小）
+    当为scaleX（数值）x轴缩放（y轴同理）
+  -webkit-transform:scaleX(0.8);
+  -moz-transform: scaleX(0.8);
+  transform: scaleX(0.8);
+
+  4.位移 translate()
+  translate()函数可以将元素向指定的方向移动，类似于position中的relative。或以简单的理解为，使用translate()函数，可以把元素从原来的位置移动，而不影响在X、Y轴上的任何Web组件。
+  translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）
+  translateX(x)仅水平方向移动（X轴移动）
+  和scale（）一样有类同的方法
+  以上都是transform中的属性
+  -------------------------------------------------------
+  原点 transform-origin
+   -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  transform-origin: top right;
+ -->
+
+  <style type="text/css">
+  .wrapper {
+  padding: 20px;
+  background:orange;
+  color:#fff;
+  position:absolute;
+  top:50%;
+  left:50%;
+  border-radius: 5px;
+  -webkit-transform:translate(-50%,-50%);
+  -moz-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="main">
+  @@include('include/leftMenu.html')
+  <div class="content_wrap">
+      <div class="content">
+      	 <h2>变形部分 位移translate</h2>
+			<div class="wrapper">
+			  变形部分 位移translate
+			  我不知道我的宽度和高是多少，我要实现水平垂直居中    
+			</div>
+      </div>
+  </div>
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

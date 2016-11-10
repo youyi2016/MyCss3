@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css/css3 demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+       body{
+		  background: #ebebeb;
+		}
+		.nav{
+		  width:560px;
+		  height: 50px;
+		  font:bold 0/50px Arial;
+		  text-align:center;
+		  margin:40px auto 0;
+	      background: #f65f57;
+          border-radius:6px;    
+          box-shadow:4px 4px 6px #f00;
+		}
+		
+		.nav a{
+		  display: inline-block;
+		  -webkit-transition: all 0.2s ease-in;
+		  -moz-transition: all 0.2s ease-in;
+		  -o-transition: all 0.2s ease-in;
+		  -ms-transition: all 0.2s ease-in;
+		  transition: all 0.2s ease-in;
+		}
+		.nav a:hover{
+		  -webkit-transform:rotate(10deg);
+		  -moz-transform:rotate(10deg);
+		  -o-transform:rotate(10deg);
+		  -ms-transform:rotate(10deg);
+		  transform:rotate(10deg);
+		}
+
+		.nav li{
+		  position:relative;
+		  display:inline-block;
+		  padding:0 16px;
+		  font-size: 13px;
+		  text-shadow:1px 2px 4px rgba(0,0,0,.5);
+		  list-style: none outside none;
+		}
+
+		.nav li{
+            background: #f65f57 no-repeat right/ 1px 15px linear-gradient(to right, #dd2926,#a82724);
+        }
+
+        .nav li:last-child{
+            background:none;
+        }
+		
+		.nav a,
+		.nav a:hover{
+		  color:#fff;
+		  text-decoration: none;
+		}
+
+	</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="main">
+  @@include('include/leftMenu.html')
+  <div class="content_wrap">
+      <div class="content">
+      	<ul class="nav">
+    	<li><a href="">Home</a></li>
+    	<li><a href="">About Me</a></li>
+    	<li><a href="">Portfolio</a></li>
+    	<li><a href="">Blog</a></li>
+    	<li><a href="">Resources</a></li>
+    	<li><a href="">Contact Me</a></li>
+	</ul>
+      </div>
+  </div>
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

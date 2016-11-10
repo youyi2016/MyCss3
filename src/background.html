@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css/css3 demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+ <!--背景图片
+起始位置*
+background-origin ： border-box | padding-box | 
+content-box;
+
+图片裁剪位置
+background-clip ： border-box | padding-box | content-box | no-clip
+
+设置背景图片大小：auto原始图片大小 cover填满整个容器 contain等比缩放至某一边紧贴容器边缘为止。
+background-size: auto | <长度值> | <百分比> | cover | contain
+
+多重背景图片
+background ： [background-color] | [background-image] | [background-position][/background-size] | [background-repeat] | [background-attachment] | [background-clip] | [background-origin],...
+
+-->
+<style type="text/css">
+
+/*多重背景图片*/
+.demo2{
+    width: 500px;
+    height: 240px;
+    border: 1px solid #999; 
+    background-image: url(img/1.png),
+                      url(img/1.png),
+                      url(img/1.png);
+    background-position: left top, 150px 0, 300px 0;
+    background-repeat: no-repeat, no-repeat, no-repeat;  
+    margin:0 0 20px 0;
+ }
+ 
+.task {
+    width: 500px;
+    height: 240px;
+    border: 1px solid #999;
+    background:url(img/1.png) no-repeat, 
+               url(img/1.png) no-repeat;
+    background-position:left top,right bottom;             
+  }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="main">
+ @@include('include/leftMenu.html')
+  <div class="content_wrap">
+      <div class="content">
+      	    <div>多重背景图片</div>
+			<div class="demo2"></div>
+			<div class="task"></div>
+      </div>
+  </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
